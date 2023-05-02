@@ -1,0 +1,71 @@
+simple git file for login page 
+
+
+https://codeanddeploy.com/blog/laravel/laravel-8-authentication-login-and-registration-with-username-or-email
+
+
+https://github.com/codeanddeploy/laravel8-authentication-example
+
+run this laravel file using this command :
+
+check the vender floder this there or not in that laravel project is there derectly run using this command  : php artisan serve
+ else:
+ 
+ download this all thinks then run this 
+
+
+create php : 
+
+sudo add-apt-repository ppa:ondrej/php
+
+sudo apt-get update
+ 
+ sudo apt-get install php8.1 php8.1-common php8.1-cli php8.1-fpm php8.1-mysql php8.1-xml php8.1-mbstring php8.1-zip php8.1-curl
+
+
+install composer :
+
+sudo apt-get update
+
+sudo apt-get install curl php-cli php-mbstring git unzip
+
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+
+php composer-setup.php --check
+
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+composer --version
+
+
+
+laravel: command not found: error for install laravel :
+
+
+composer --version
+
+composer global require laravel/installer
+
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+source ~/.bashrc
+
+source ~/.zshrc
+
+laravel --version
+
+
+
+<img class="mb-4" src="{!! url('images/bootstrap-logo.svg') !!}" alt="" width="72" height="57">
+
+
+php artisan db  : for connect db in laravel project
+
+php artisan migrate : create mysql connection with migrate 
+
+https://www.youtube.com/watch?v=1-6vBAPvU4k   : for create the dashboard for admin
+
+https://www.youtube.com/watch?v=BgGnKqDZSkA :create serverless laravel 
+
+github link for new laravel project https://github.com/AjayYadavAi/laravel-starter
+

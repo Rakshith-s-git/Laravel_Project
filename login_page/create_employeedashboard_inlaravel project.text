@@ -1,0 +1,86 @@
+Sure, here are the step-by-step instructions for creating an admin/employee page in your Laravel project:
+
+Create a controller named EmployeeController by running the following command in your terminal:
+
+php artisan make:controller Admin/EmployeeController
+
+Open the EmployeeController.php file that was just created inside the app/Http/Controllers/Admin directory and add a method named index:
+
+
+public function index()
+{
+    return view('admin.employee');
+}
+
+Create a blade view file named employee.blade.php inside the resources/views/admin directory. This is the view that will be returned by the index method of the EmployeeController:bash
+
+
+touch resources/views/employee.blade.php   : in  terminal 
+
+
+Inside the employee.blade.php file, add the HTML code that you want to display for the employee page.
+
+Add a route for the admin/employee URL in the routes/web.php file:
+
+
+
+Route::get('/admin/employee', [\App\Http\Controllers\Admin\EmployeeController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('admin.employee');
+    
+Finally, add a link to the admin/employee page in your dashboard.blade.php file:
+
+
+<a href="{{ route('admin.employee') }}">Employee Page</a>
+
+
+That's it! Now you can access the admin/employee page by clicking the "Employee Page" link in your dashboard.blade.php file.
+
+
+error : i am getting 
+
+InvalidArgumentException
+View [admin.employee] not found.
+http://127.0.0.1:8000/admin/employee
+
+
+This error occurs because Laravel is unable to find the admin.employee view file.
+
+Here are a few things you can check:
+
+Make sure that the employee.blade.php file is located in the correct directory: resources/views/admin/employee.blade.php.
+
+Check the spelling and case of the view name in the EmployeeController file. It should be admin.employee:
+
+
+
+public function index()
+{
+    return view('admin.employee');
+}
+Make sure that you have saved all the files and that there are no typos in your code.
+
+If none of these steps resolve the issue, you can try running the following command in your terminal to clear the cache:
+
+
+php artisan view:clear
+
+
+This will clear the compiled views and force Laravel to recompile them.
+
+
+
+i have resources/views/employee.blade.php. create like this floder becouse i dont have admin inthat views folder 
+
+If you don't want to use an admin folder for your views, you can simply change the name of the view in your EmployeeController:
+
+
+public function index()
+{
+    return view('employee');
+}
+
+Make sure that the employee.blade.php file is located in the correct directory: resources/views/employee.blade.php.
+
+
+Then, you can access the employee page by visiting http://127.0.0.1:8000/employee in your browser.
